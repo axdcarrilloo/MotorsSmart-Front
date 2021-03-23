@@ -73,8 +73,9 @@ export class RegisterComponent implements OnInit {
   }
 
   showSuccessfulDialogue(): void{
+    const messages = ['Registro exitoso','El producto se registro satisfactoriamente'];
     this.dialog.open(
-      DialogSuccessfulComponent, {data: 'Producto registrado con exito....!'
+      DialogSuccessfulComponent, {data: messages
     // tslint:disable-next-line: deprecation
     }).afterClosed().subscribe((confirmed: boolean) => {
       if (confirmed){
@@ -86,8 +87,9 @@ export class RegisterComponent implements OnInit {
   }
 
   showWaringDialogue(): void{
+    const messages = ['Error de registro','El producto que desea registrar, ya existe'];
     this.dialog.open(
-      DialogWaringComponent, {data: 'El producto que desea registrar, ya existe....!'
+      DialogWaringComponent, {data: messages,
     // tslint:disable-next-line: deprecation
     }).afterClosed().subscribe((confirmed: boolean) => {
       if (confirmed){
