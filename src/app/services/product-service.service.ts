@@ -1,3 +1,4 @@
+import { User } from './../models/user';
 import { ProductDto } from './../models/dto/productDto';
 import { environment } from './../../environments/environment';
 import { Injectable } from '@angular/core';
@@ -14,8 +15,12 @@ export class ProductServiceService {
 
   constructor(private http: HttpClient) { }
 
-  deleteProduct(playload): Observable<number>{
-    return this.http.delete<number>(environment.BASE + '/products/delete/' + playload);
+  getProductByContrains(playload): Observable<Product[]>{
+    return this.http.get<Product[]>(environment.BASE + '/products/contrains/' + playload);
+  }
+
+  deleteProduct(playload, idUserRegister): Observable<number>{
+    return this.http.delete<number>(environment.BASE + `/products/delete/${playload}/${idUserRegister}`);
   }
 
   convertToDto(product: Product): ProductDto{

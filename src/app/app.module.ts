@@ -14,10 +14,11 @@ import {MatInputModule} from '@angular/material/input';
 import { AppComponent } from './app.component';
 import { DialogSuccessfulComponent } from './dialog/dialog-successful/dialog-successful.component';
 import { DialogWaringComponent } from './dialog/dialog-waring/dialog-waring.component';
+import { UpdateProductComponent } from './dialog/update-product/update-product.component';
 
 @NgModule({
   declarations: [
-    AppComponent, DialogSuccessfulComponent, DialogWaringComponent
+    AppComponent, DialogSuccessfulComponent, DialogWaringComponent, UpdateProductComponent
   ],
   imports: [
     BrowserModule, AppRoutingModule, BrowserAnimationsModule, MatMenuModule, MatButtonToggleModule,

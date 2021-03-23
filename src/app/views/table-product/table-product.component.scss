@@ -22,3 +22,32 @@ td {
     width: 20px;
     height: 15px;
 }
+
+.select {
+    padding: 8px 5px;
+    border: none;
+    border-radius: 2px;
+    background-color: #4487B6;
+}
+
+.inputSearch {
+    width: 250px;
+    border: none;
+    border-bottom: 2px solid blue;
+    text-align: center;
+    height: 35px;
+}
+
+.divSearch {
+    width: 320px;
+    text-align: right;
+}
+
+.table {
+    margin-top: 15px;
+}
+
+.divMedium {
+    columns: 2;
+    text-align: center;
+}
