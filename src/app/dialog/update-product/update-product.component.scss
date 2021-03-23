@@ -7,7 +7,7 @@
     border: groove;
 }
 
-.btnRegister {
+.btnUpdate {
     background-color: blue;
     width: 100px;
     font-weight: bold;
@@ -21,8 +21,4 @@
     border-bottom: 2px solid blue;
     text-align: center;
     height: 35px;
-}
-
-.inputsForm :focus {
-    border-bottom: none;
 }
