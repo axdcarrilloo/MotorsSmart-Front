@@ -1,3 +1,4 @@
+import { UpdateProductComponent } from './../../dialog/update-product/update-product.component';
 import { UserServiceService } from './../../services/user-service.service';
 import { ProductServiceService } from './../../services/product-service.service';
 import { Product } from './../../models/product';
@@ -32,6 +33,7 @@ export class TableProductComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.loadUsers();
+    this.idUserSelected = 1;
     this.loadTable();
   }
 
@@ -81,8 +83,9 @@ export class TableProductComponent implements OnInit, OnDestroy {
   }
 
   showSuccessfulDialogue(): void{
+    const messages = ['Producto eliminado','El producto se elimino satisfactoriamente'];
     this.dialog.open(
-      DialogSuccessfulComponent, {data: 'Eliminacion exitosa....!'
+      DialogSuccessfulComponent, {data: messages
     // tslint:disable-next-line: deprecation
     }).afterClosed().subscribe((confirmed: boolean) => {
       if (confirmed){
@@ -94,8 +97,9 @@ export class TableProductComponent implements OnInit, OnDestroy {
   }
 
   showWaringDialogue(): void{
+    const messages = ['Error de eliminacion','Este usuario no puede eliminar este producto'];
     this.dialog.open(
-      DialogWaringComponent, {data: 'Este usuario no puede eliminar este producto....!'
+      DialogWaringComponent, {data: messages,
     // tslint:disable-next-line: deprecation
     }).afterClosed().subscribe((confirmed: boolean) => {
       if (confirmed){
@@ -114,7 +118,22 @@ export class TableProductComponent implements OnInit, OnDestroy {
         this.resultProducts = [];
         this.resultProducts = this.convertDto(data);
       });
+    }else{
+      this.loadTable();
     }
+  }
+
+  updateProduct(playload, index: number): void{
+    const messages = ['Modificando producto',''];
+    this.dialog.open(
+      UpdateProductComponent, {data: messages,
+    }).afterClosed().subscribe((confirmed: boolean) => {
+      if (confirmed){
+        console.log('Se acepto');
+      }else{
+        console.log('Se rechazo');
+      }
+    });
   }
 
 }

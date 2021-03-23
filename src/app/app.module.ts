@@ -10,6 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
 import {MatInputModule} from '@angular/material/input';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { DialogSuccessfulComponent } from './dialog/dialog-successful/dialog-successful.component';
@@ -22,7 +23,7 @@ import { UpdateProductComponent } from './dialog/update-product/update-product.c
   ],
   imports: [
     BrowserModule, AppRoutingModule, BrowserAnimationsModule, MatMenuModule, MatButtonToggleModule,
-    HttpClientModule, MatDialogModule, MatButtonModule, MatInputModule, ViewsModule
+    HttpClientModule, MatDialogModule, MatButtonModule, MatInputModule, ViewsModule, FormsModule
   ],
   exports: [
   ],

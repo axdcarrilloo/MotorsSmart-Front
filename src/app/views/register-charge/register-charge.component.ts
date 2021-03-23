@@ -1,8 +1,6 @@
 import { ChargeServiceService } from './../../services/charge-service.service';
 import { ChargeDto } from './../../models/dto/charge-dto';
-import { Charge } from './../../models/charge';
 import { Component, OnInit } from '@angular/core';
-import { FormGroup } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogSuccessfulComponent } from 'src/app/dialog/dialog-successful/dialog-successful.component';
 import { DialogWaringComponent } from 'src/app/dialog/dialog-waring/dialog-waring.component';
@@ -39,8 +37,9 @@ export class RegisterChargeComponent implements OnInit {
   }
 
   showSuccessfulDialogue(): void{
+    const messages = ['Registro exitoso','El producto se registro satisfactoriamente'];
     this.dialog.open(
-      DialogSuccessfulComponent, {data: 'Cargo registrado con exito....!'
+      DialogSuccessfulComponent, {data: messages
     // tslint:disable-next-line: deprecation
     }).afterClosed().subscribe((confirmed: boolean) => {
       if (confirmed){
@@ -52,8 +51,9 @@ export class RegisterChargeComponent implements OnInit {
   }
 
   showWaringDialogue(): void{
+    const messages = ['Error de registro','El cargo que desea registrar, ya existe'];
     this.dialog.open(
-      DialogWaringComponent, {data: 'El cargo que desea registrar, ya existe....!'
+      DialogWaringComponent, {data: messages,
     // tslint:disable-next-line: deprecation
     }).afterClosed().subscribe((confirmed: boolean) => {
       if (confirmed){

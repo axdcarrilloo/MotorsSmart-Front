@@ -1,1 +1,10 @@
-<p>update-product works!</p>
+<h1 mat-dialog-title>{{ messages[0] }}</h1>
+<form #formCharge="ngForm" (ngSubmit)="update($event)" class="formMain">
+    <p>
+        <input required type="text" class="inputsForm" [(ngModel)]="productName" [ngModelOptions]="{standalone: true}">
+    </p>
+    <p>
+        <input required type="text" class="inputsForm" [(ngModel)]="quantity" [ngModelOptions]="{standalone: true}">
+    </p>
+    <button class="btnUpdate" mat-button type=" submit "> Actualizar </button>
+</form>

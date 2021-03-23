@@ -3,7 +3,7 @@
     <div class="divMedium">
         Usuario:
         <select class="select" [(ngModel)]="idUserSelected">
-          <option [value]="item.id" *ngFor="let item of usersLoaded">{{item.name}}</option>
+            <option [value]="item.id" *ngFor="let item of usersLoaded">{{item.name}}</option>
         </select>
 
         <div class="divSearch">
@@ -29,7 +29,7 @@
                     <button class="btnIcon" title="Eliminar" (click)="delete(product, i)">
                       <img class="iconBoton" src="./../../../assets/icon/Eliminar.png"/>
                   </button>
-                    <button class="btnIcon" title="Editar">
+                    <button class="btnIcon" title="Editar" (click)="updateProduct(product, i)">
                       <img class="iconBoton" src="./../../../assets/icon/Editar.png"/>
                   </button>
                 </td>
