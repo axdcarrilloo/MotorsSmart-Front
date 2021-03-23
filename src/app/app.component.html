@@ -1,0 +1,18 @@
+<div class="divMainMenu">
+    <button mat-button [matMenuTriggerFor]="menuRegister"> Registrar </button>
+    <mat-menu #menuRegister="matMenu">
+        <button mat-menu-item routerLink="/Register"> Producto </button>
+        <button mat-menu-item routerLink="/RegisterCharge"> Cargo </button>
+        <button mat-menu-item> Usuario </button>
+    </mat-menu>
+
+    <button mat-button [matMenuTriggerFor]="menuConsultation"> Consultas </button>
+    <mat-menu #menuConsultation="matMenu">
+        <button mat-menu-item routerLink="/Consultation"> Producto </button>
+        <button mat-menu-item> Cargo </button>
+        <button mat-menu-item> Usuario </button>
+    </mat-menu>
+</div>
+<div class="divBody">
+    <router-outlet></router-outlet>
+</div>

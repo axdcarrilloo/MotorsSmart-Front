@@ -1,0 +1,28 @@
+.formMain {
+    width: 250px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    padding: 5px;
+    border: groove;
+}
+
+.btnRegister {
+    background-color: blue;
+    width: 100px;
+    font-weight: bold;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+}
+
+.inputsForm {
+    border: none;
+    border-bottom: 2px solid blue;
+    text-align: center;
+    height: 35px;
+}
+
+.inputsForm :focus {
+    border-bottom: none;
+}

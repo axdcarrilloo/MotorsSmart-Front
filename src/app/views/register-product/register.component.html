@@ -1,0 +1,28 @@
+<form [formGroup]="inputProduct" (ngSubmit)="save($event)" class="formMain">
+    <p>
+        Usuario:
+        <select formControlName="idUser" name="selectUsers" class="select">
+        <option [value]="item.id" *ngFor="let item of usersLoaded">{{item.name}}</option>
+      </select>
+    </p>
+
+    <p>
+        <input type="text" formControlName="productName" class="inputsForm" placeholder="Nombre del producto">
+    </p>
+    <div *ngIf="inputProduct.get('productName').errors && inputProduct.get('productName').touched">
+        <h5 *ngIf="inputProduct.get('productName').hasError('required')" class="h5ValidateCampos">
+            El nombre del producto es un campo requerido
+        </h5>
+    </div>
+
+    <p>
+        <input type="number" formControlName="quantity" class="inputsForm" placeholder="Cantidad">
+    </p>
+    <div *ngIf="inputProduct.get('quantity').errors && inputProduct.get('quantity').touched">
+        <h5 *ngIf="inputProduct.get('quantity').hasError('required')" class="h5ValidateCampos">
+            La cantidad es un campo requerido
+        </h5>
+    </div>
+
+    <button class="btnRegister" mat-button type="submit">Registrar</button>
+</form>
