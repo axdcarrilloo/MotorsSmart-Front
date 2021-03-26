@@ -49,7 +49,7 @@ export class ProductServiceService {
     const header = new HttpHeaders();
     header.append('Content-Type', 'application/json');
     const options = ({ headers: header });
-    return this.http.post<number>(environment.BASE + '/products/update', playload, options);
+    return this.http.put<number>(environment.BASE + '/products/update', playload, options);
   }
 
 }

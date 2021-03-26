@@ -14,4 +14,8 @@ export class UserServiceService {
   getAllUsers(): Observable<User[]>{
     return this.http.get<User[]>(environment.BASE + '/users/getAll');
   }
+
+  getUserById(playload): Observable<User>{
+      return this.http.get<User>(environment.BASE + '/' + playload);
+  }
 }

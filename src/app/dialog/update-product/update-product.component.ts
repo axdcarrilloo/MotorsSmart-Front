@@ -1,3 +1,4 @@
+import { ProductDto } from './../../models/dto/productDto';
 import { ProductServiceService } from './../../services/product-service.service';
 import { Product } from './../../models/product';
 import { Component, Inject, OnInit } from '@angular/core';
@@ -18,18 +19,21 @@ export class UpdateProductComponent implements OnInit {
 
   constructor(
     public dialog: MatDialogRef<UpdateProductComponent>,
-    @Inject(MAT_DIALOG_DATA) public messages: any[],
+    @Inject(MAT_DIALOG_DATA) public data: any[],
     public productService: ProductServiceService
     ) { }
 
   ngOnInit(): void {
+    this.productMain = this.data[2];
+    this.productName = this.productMain.productName;
+    this.quantity = this.productMain.quantity;
   }
 
   update(event: Event): void{
-    const playload = new Product(this.productMain.id, this.productName, this.quantity,
-      this.productMain.dateAdmission, 1);
+    let playload = new ProductDto(this.productName, this.quantity,
+      null, this.productMain.idUser);
     this.productService.updateProduct(playload).subscribe((result: number) => {
-      if(result === 0){
+      if(result !== 0){
           console.log("Se actualizo");
       }else{
         console.log("No se actualizo");

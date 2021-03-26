@@ -123,10 +123,11 @@ export class TableProductComponent implements OnInit, OnDestroy {
     }
   }
 
-  updateProduct(playload, index: number): void{
-    const messages = ['Modificando producto',''];
+  updateProduct(playload): void{
+    playload.idUser = this.idUserSelected;
+    const objects = ['Modificando producto','', playload];
     this.dialog.open(
-      UpdateProductComponent, {data: messages,
+      UpdateProductComponent, {data: objects,
     }).afterClosed().subscribe((confirmed: boolean) => {
       if (confirmed){
         console.log('Se acepto');
